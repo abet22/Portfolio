@@ -7,18 +7,21 @@ import {
   siTypescript,
   siTailwindcss,
   siHtml5,
+  siJavascript,
   siNodedotjs,
   siPython,
   siPostgresql,
   siFirebase,
+  siCplusplus,
+  siC,
   siFlutter,
-  siSwift,
-  siKotlin,
+  siAndroidstudio,
+  siXcode,
   siGit,
   siDocker,
   siVercel,
+  siRender,
   siGithub,
-  siFigma,
 } from "simple-icons";
 
 type SimpleIcon = { path: string; hex: string; title: string };
@@ -29,19 +32,36 @@ const iconMap: Record<string, SimpleIcon> = {
   typescript: siTypescript,
   tailwind: siTailwindcss,
   html: siHtml5,
+  javascript: siJavascript,
   nodejs: siNodedotjs,
   python: siPython,
   postgresql: siPostgresql,
   firebase: siFirebase,
+  cplusplus: siCplusplus,
+  c: siC,
   flutter: siFlutter,
-  swift: siSwift,
-  kotlin: siKotlin,
+  androidstudio: siAndroidstudio,
+  xcode: siXcode,
   git: siGit,
   docker: siDocker,
   vercel: siVercel,
+  render: siRender,
   github: siGithub,
-  figma: siFigma,
 };
+
+// Brand icons not in simple-icons — brand color + letter
+const brandLetterIcons: Record<string, { color: string; letter: string }> = {
+  word:        { color: "#2B579A", letter: "W"  },
+  excel:       { color: "#217346", letter: "X"  },
+  powerpoint:  { color: "#B7472A", letter: "P"  },
+  sharepoint:  { color: "#036C70", letter: "SP" },
+  azure:       { color: "#0078D4", letter: "Az" },
+  aws:         { color: "#FF9900", letter: "AW" },
+};
+
+// Power BI SVG path (custom, not in simple-icons)
+const powerbiPath =
+  "M6.077 5.37a.75.75 0 0 0-.638 1.358L9.71 8.68l-5.04 2.053a.75.75 0 1 0 .566 1.39l5.44-2.217V21h1.5V9.906l5.44 2.217a.75.75 0 0 0 .566-1.39l-5.04-2.052 4.27-1.953a.75.75 0 1 0-.637-1.358L12 7.469Z";
 
 // Java SVG path (custom, since simple-icons doesn't include it)
 const javaPath =
@@ -52,7 +72,8 @@ function TechIcon({ icon, name }: { icon: string; name: string }) {
 
   if (siIcon) {
     const isLight =
-      icon === "nextjs" || icon === "vercel" || icon === "github";
+      icon === "nextjs" || icon === "vercel" || icon === "github" ||
+      icon === "xcode";
 
     return (
       <div className="flex flex-col items-center gap-2.5 p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-200 group cursor-default">
@@ -103,6 +124,46 @@ function TechIcon({ icon, name }: { icon: string; name: string }) {
     );
   }
 
+  // Brand letter icon fallback
+  if (brandLetterIcons[icon]) {
+    const { color, letter } = brandLetterIcons[icon];
+    return (
+      <div className="flex flex-col items-center gap-2.5 p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-200 group cursor-default">
+        <div
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-white text-sm font-bold"
+          style={{ background: color }}
+        >
+          {letter}
+        </div>
+        <span className="text-xs text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors text-center leading-tight">
+          {name}
+        </span>
+      </div>
+    );
+  }
+
+  // Power BI fallback
+  if (icon === "powerbi") {
+    return (
+      <div className="flex flex-col items-center gap-2.5 p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-200 group cursor-default">
+        <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#F2C81118]">
+          <svg
+            role="img"
+            viewBox="0 0 24 24"
+            className="w-5 h-5"
+            style={{ fill: "#F2C811" }}
+            aria-label="Power BI"
+          >
+            <path d={powerbiPath} />
+          </svg>
+        </div>
+        <span className="text-xs text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors text-center leading-tight">
+          {name}
+        </span>
+      </div>
+    );
+  }
+
   // Generic fallback
   return (
     <div className="flex flex-col items-center gap-2.5 p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-200 group cursor-default">
@@ -124,6 +185,7 @@ export default async function Skills() {
     Backend: t("cat_backend"),
     Mobile: t("cat_mobile"),
     "Tools & DevOps": t("cat_tools"),
+    Microsoft: t("cat_microsoft"),
   };
 
   return (

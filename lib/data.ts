@@ -1,14 +1,16 @@
 export const personalInfo = {
-  name: "Albert González",
+  name: "Albert González Braojos",
   title: "Software Engineer",
-  tagline: "Full Stack · Mobile · Always Building",
-  bio: "Soy Ingeniero Informático apasionado por construir productos digitales de calidad. Me especializo en desarrollo Full Stack y aplicaciones móviles, siempre buscando escribir código limpio, escalable y con buena UX.",
+  tagline: "Full Stack · AI · DevOps · IT",
+  bio: "Estudiante de Ingeniería Informática en la Universitat Politècnica de Catalunya",
   location: "Barcelona, España",
+  phone: "+34 654 17 45 60",
+  birthYear: 2003,
   email: "albertgnzbr@gmail.com",
   github: "https://github.com/abet22",
   linkedin: "https://www.linkedin.com/in/albert-gonzalez-braojos/",
-  cv: "/cv.pdf",
-  avatar: "/avatar.jpg",
+  cv: "/cvs/Albert_Gonzalez_2025_ES_CV.pdf",
+  avatar: "/images/descarga.jpg",
 };
 
 export type Skill = {
@@ -28,6 +30,7 @@ export const skills: SkillCategory[] = [
       { name: "React", icon: "react" },
       { name: "Next.js", icon: "nextjs" },
       { name: "TypeScript", icon: "typescript" },
+      { name: "JavaScript", icon: "javascript" },
       { name: "Tailwind CSS", icon: "tailwind" },
       { name: "HTML / CSS", icon: "html" },
     ],
@@ -38,6 +41,8 @@ export const skills: SkillCategory[] = [
       { name: "Node.js", icon: "nodejs" },
       { name: "Python", icon: "python" },
       { name: "Java", icon: "java" },
+      { name: "C++", icon: "cplusplus" },
+      { name: "C", icon: "c" },
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "Firebase", icon: "firebase" },
     ],
@@ -45,10 +50,9 @@ export const skills: SkillCategory[] = [
   {
     category: "Mobile",
     skills: [
-      { name: "React Native", icon: "react" },
       { name: "Flutter", icon: "flutter" },
-      { name: "Swift", icon: "swift" },
-      { name: "Kotlin", icon: "kotlin" },
+      { name: "Android Studio", icon: "androidstudio" },
+      { name: "Xcode", icon: "xcode" },
     ],
   },
   {
@@ -57,8 +61,20 @@ export const skills: SkillCategory[] = [
       { name: "Git", icon: "git" },
       { name: "Docker", icon: "docker" },
       { name: "Vercel", icon: "vercel" },
+      { name: "Render", icon: "render" },
+      { name: "AWS", icon: "aws" },
       { name: "GitHub Actions", icon: "github" },
-      { name: "Figma", icon: "figma" },
+    ],
+  },
+  {
+    category: "Microsoft",
+    skills: [
+      { name: "Azure", icon: "azure" },
+      { name: "Word", icon: "word" },
+      { name: "Excel", icon: "excel" },
+      { name: "PowerPoint", icon: "powerpoint" },
+      { name: "SharePoint", icon: "sharepoint" },
+      { name: "Power BI", icon: "powerbi" },
     ],
   },
 ];
@@ -69,51 +85,45 @@ export type Project = {
   longDescription: string;
   stack: string[];
   github?: string;
+  githubBack?: string;
   demo?: string;
+  personal?: boolean;
   image: string;
   featured: boolean;
 };
 
 export const projects: Project[] = [
   {
-    title: "Proyecto Alpha",
-    description: "Una aplicación web completa con autenticación, dashboard en tiempo real y API REST.",
+    title: "OneMore",
+    description: "Aplicación full stack con frontend en React y backend en Python/FastAPI.",
     longDescription:
-      "Descripción detallada del proyecto. Qué problema resuelve, cómo lo resuelve y qué aprendiste construyéndolo.",
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    github: "https://github.com/tu-usuario/proyecto-alpha",
-    demo: "https://proyecto-alpha.vercel.app",
-    image: "/projects/project1.jpg",
+      "OneMore es una aplicación web full stack. El frontend está construido con React + Vite y Tailwind CSS, y el backend con Python, FastAPI y PostgreSQL, todo contenerizado con Docker.",
+    stack: ["React", "Vite", "Python", "FastAPI", "PostgreSQL", "Docker"],
+    personal: true,
+    github: "https://github.com/abet22/OneMore-Frontend",
+    githubBack: "https://github.com/abet22/OneMore-Backend",
+    image: "/images/onemorelogo.png",
     featured: true,
   },
   {
-    title: "App Mobile",
-    description: "Aplicación móvil cross-platform con notificaciones push y sincronización offline.",
+    title: "DockerIptables",
+    description: "Solución para gestionar reglas iptables en entornos Docker de forma segura y configurable.",
     longDescription:
-      "Descripción detallada de la app mobile. Plataformas soportadas, desafíos técnicos y soluciones adoptadas.",
-    stack: ["React Native", "Firebase", "Expo"],
-    github: "https://github.com/tu-usuario/app-mobile",
-    image: "/projects/project2.jpg",
+      "Herramienta IT/DevOps que resuelve el problema de que los contenedores Docker evitan las reglas del firewall al manipular iptables directamente. Proporciona scripts configurables para gestionar la cadena DOCKER-USER y asegurar un control de red consistente.",
+    stack: ["Shell", "Docker", "iptables"],
+    github: "https://github.com/abet22/DockerIptables",
+    image: "",
     featured: true,
   },
   {
-    title: "API Service",
-    description: "Microservicio RESTful con autenticación JWT, rate limiting y documentación automática.",
+    title: "Web Certificates Checker",
+    description: "Script Python para verificar certificados SSL/TLS de múltiples hosts y exportar resultados.",
     longDescription:
-      "API construida con arquitectura limpia, tests de integración y documentación con Swagger.",
-    stack: ["Node.js", "Express", "Docker", "PostgreSQL"],
-    github: "https://github.com/tu-usuario/api-service",
-    image: "/projects/project3.jpg",
+      "Programa Python que permite comprobar certificados SSL/TLS de varios hosts a la vez o uno concreto. Soporta puertos personalizados, guarda errores en misses.txt y exporta los datos de los certificados a un Excel.",
+    stack: ["Python"],
+    github: "https://github.com/abet22/checking-web-certificates",
+    image: "",
     featured: true,
-  },
-  {
-    title: "Proyecto Extra",
-    description: "Herramienta de productividad con interfaz minimalista y sincronización en la nube.",
-    longDescription: "Descripción adicional del cuarto proyecto.",
-    stack: ["React", "Python", "FastAPI"],
-    github: "https://github.com/tu-usuario/proyecto-extra",
-    image: "/projects/project4.jpg",
-    featured: false,
   },
 ];
 
@@ -127,30 +137,76 @@ export type Experience = {
 };
 
 export const experience: Experience[] = [
+  // --- Experiencia laboral (type: "work") ---
   {
     type: "work",
-    title: "Software Engineer",
-    organization: "Empresa Actual",
-    period: "2024 – Presente",
+    title: "Full Stack Developer",
+    organization: "Raona Enginyers SL",
+    period: "Oct 2025 – Presente",
     description:
-      "Desarrollo de funcionalidades full stack, optimización de rendimiento y colaboración en diseño de arquitectura.",
-    skills: ["React", "Node.js", "PostgreSQL", "Docker"],
+      "Desarrollo full stack en entorno profesional de consultoría tecnológica.",
+    skills: [],
   },
   {
     type: "work",
-    title: "Desarrollador Full Stack (Prácticas)",
-    organization: "Empresa Anterior",
-    period: "2023 – 2024",
+    title: "Becario IT",
+    organization: "FIB – UPC",
+    period: "Abr 2024 – Jul 2025",
     description:
-      "Participé en el ciclo completo de desarrollo de una plataforma SaaS: desde el diseño hasta el despliegue en producción.",
-    skills: ["Next.js", "TypeScript", "Firebase"],
+      "Soporte técnico y mantenimiento de sistemas para estudiantes, profesores y administrativos de la facultad.",
+    skills: [
+      "Bash", "Python", "SQL", "Docker",
+      "iptables/ufw", "Linux", "Snapshots/Cron",
+      "Certificados web", "Redes locales",
+    ],
   },
+  {
+    type: "work",
+    title: "Vendedor",
+    organization: "Decathlon",
+    period: "May 2023 – Ago 2023",
+    description:
+      "Atención personalizada al cliente, gestión de stock y colaboración en equipo en un entorno dinámico de ventas.",
+    skills: [
+      "Atención al cliente", "Gestión de stock",
+      "Trabajo en equipo", "Comunicación efectiva",
+      "Resolución de problemas", "Atención al detalle",
+    ],
+  },
+  // --- Formación (type: "education") ---
   {
     type: "education",
     title: "Grado en Ingeniería Informática",
-    organization: "Universidad",
-    period: "2020 – 2024",
+    organization: "UPC – Universitat Politècnica de Catalunya",
+    period: "2021 – Presente",
     description:
-      "Especialización en Ingeniería del Software. TFG sobre arquitecturas de microservicios.",
+      "Especialización en Ingeniería del Software y sistemas distribuidos.",
+    skills: [],
+  },
+  {
+    type: "education",
+    title: "Bachillerato Tecnológico",
+    organization: "Institut ...",
+    period: "2019 – 2021",
+    description:
+      "Modalidad tecnológica con énfasis en matemáticas, física y tecnología.",
+    skills: [],
+  },
+];
+
+export type Certificate = {
+  name: string;
+  issuer: string;
+  date: string;
+  level?: string;
+  credentialUrl?: string;
+};
+
+export const certificates: Certificate[] = [
+  {
+    name: "Cambridge English: First (FCE)",
+    issuer: "Cambridge Assessment English",
+    date: "2019",
+    level: "B2 Upper-Intermediate",
   },
 ];

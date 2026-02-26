@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { projects } from "@/lib/data";
@@ -37,39 +36,48 @@ export default function Projects() {
           {displayed.map((project, i) => (
             <FadeIn key={project.title} delay={i * 0.08}>
               <article className="group flex flex-col h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] overflow-hidden hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300">
-                <div className="relative w-full aspect-video bg-[var(--border)] overflow-hidden">
-                  {project.image ? (
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-4xl font-bold text-[var(--border)] select-none">
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--card)] via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
-                </div>
-
                 <div className="flex flex-col flex-1 p-5 gap-3">
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-semibold text-[var(--foreground)] text-base leading-snug">
-                      {project.title}
-                    </h3>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-semibold text-[var(--foreground)] text-base leading-snug">
+                        {project.title}
+                      </h3>
+                      {project.personal && (
+                        <span className="inline-flex w-fit items-center px-2 py-0.5 text-[10px] font-medium rounded-md"
+                          style={{
+                            background: "color-mix(in srgb, var(--accent) 12%, transparent)",
+                            color: "var(--accent)",
+                          }}
+                        >
+                          Proyecto personal
+                        </span>
+                      )}
+                    </div>
                     <div className="flex items-center gap-2 shrink-0">
                       {project.github && (
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label="GitHub"
-                          className="text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
+                          aria-label="GitHub Frontend"
+                          className="text-[var(--muted)] hover:text-[var(--foreground)] transition-colors flex items-center gap-1"
                         >
                           <Github size={16} />
+                          {project.githubBack && (
+                            <span className="text-[10px] font-mono">FE</span>
+                          )}
+                        </a>
+                      )}
+                      {project.githubBack && (
+                        <a
+                          href={project.githubBack}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub Backend"
+                          className="text-[var(--muted)] hover:text-[var(--foreground)] transition-colors flex items-center gap-1"
+                        >
+                          <Github size={16} />
+                          <span className="text-[10px] font-mono">BE</span>
                         </a>
                       )}
                       {project.demo && (

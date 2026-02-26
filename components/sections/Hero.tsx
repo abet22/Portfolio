@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowDown, FileText } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { personalInfo } from "@/lib/data";
 
 const container = {
@@ -27,6 +27,11 @@ const item = {
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
+  const cvHref =
+    locale === "en" || locale === "de"
+      ? "/cvs/Albert_Gonzalez_2025_EN_CV.pdf"
+      : "/cvs/Albert_Gonzalez_2025_ES_CV.pdf";
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative overflow-hidden">
@@ -102,7 +107,7 @@ export default function Hero() {
           </a>
           {personalInfo.cv && (
             <a
-              href={personalInfo.cv}
+              href={cvHref}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-lg text-sm font-medium border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"

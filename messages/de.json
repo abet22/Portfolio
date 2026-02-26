@@ -1,0 +1,120 @@
+{
+  "personal": {
+    "tagline": "Full Stack · DevOps · IT",
+    "bio": "Ich bin Informatikstudent an der UPC und begeistert davon, hochwertige digitale Produkte zu entwickeln. Ich spezialisiere mich auf Full-Stack-Entwicklung und IT-Systeme und schreibe stets sauberen, skalierbaren Code mit großartiger UX.",
+    "bio2": "Ich baue leidenschaftlich gerne Produkte, die ein durchdachtes Nutzererlebnis mit sauberem, wartbarem Code verbinden. Immer auf der Suche nach neuen Technologien und bewährten Methoden für jedes Projekt."
+  },
+  "nav": {
+    "about": "Über mich",
+    "skills": "Technologien",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "certificates": "Zertifikate",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "available": "Offen für neue Möglichkeiten",
+    "greeting": "Hallo, ich bin",
+    "cta_projects": "Projekte ansehen",
+    "cta_contact": "Kontakt",
+    "cta_cv": "Lebenslauf"
+  },
+  "about": {
+    "number": "01.",
+    "title": "Über mich",
+    "phone_label": "Telefon",
+    "age_label": "Alter",
+    "age_years": "Jahre"
+  },
+  "skills": {
+    "number": "02.",
+    "title": "Technologien",
+    "cat_frontend": "Frontend",
+    "cat_backend": "Backend",
+    "cat_mobile": "Mobile",
+    "cat_tools": "Tools & DevOps",
+    "cat_microsoft": "Microsoft"
+  },
+  "projects": {
+    "number": "03.",
+    "title": "Projekte",
+    "show_all": "Alle Projekte anzeigen ({count})",
+    "show_less": "Weniger anzeigen",
+    "items": [
+      {
+        "title": "OneMore",
+        "description": "Full-Stack-Anwendung mit React-Frontend und Python/FastAPI-Backend.",
+        "longDescription": "OneMore ist eine Full-Stack-Webanwendung. Das Frontend wurde mit React + Vite und Tailwind CSS erstellt, das Backend mit Python, FastAPI und PostgreSQL – alles containerisiert mit Docker."
+      },
+      {
+        "title": "DockerIptables",
+        "description": "Lösung zur sicheren und konfigurierbaren Verwaltung von iptables-Regeln in Docker-Umgebungen.",
+        "longDescription": "IT/DevOps-Tool, das das Problem löst, dass Docker-Container Firewall-Regeln durch direktes Manipulieren von iptables umgehen. Bietet konfigurierbare Skripte zur Verwaltung der DOCKER-USER-Kette."
+      },
+      {
+        "title": "Web Certificates Checker",
+        "description": "Python-Skript zur Überprüfung von SSL/TLS-Zertifikaten mehrerer Hosts und zum Exportieren der Ergebnisse.",
+        "longDescription": "Python-Programm zur gleichzeitigen Überprüfung von SSL/TLS-Zertifikaten mehrerer Hosts. Unterstützt benutzerdefinierte Ports, speichert Fehler in misses.txt und exportiert Zertifikatsdaten nach Excel."
+      }
+    ]
+  },
+  "experience": {
+    "number": "04.",
+    "title": "Erfahrung",
+    "label_work": "Berufserfahrung",
+    "label_education": "Ausbildung",
+    "items": [
+      {
+        "title": "Full Stack Developer",
+        "organization": "Raona Enginyers SL",
+        "period": "Okt 2025 – Heute",
+        "description": "Full-Stack-Entwicklung in einem professionellen IT-Beratungsumfeld."
+      },
+      {
+        "title": "IT-Praktikant",
+        "organization": "FIB – UPC",
+        "period": "Apr 2024 – Jul 2025",
+        "description": "Technischer Support und Systemwartung für Studierende, Lehrkräfte und Verwaltungspersonal. Behebung von Software-, Hardware- und Netzwerkproblemen sowie Konfiguration lokaler Netzwerke."
+      },
+      {
+        "title": "Verkäufer",
+        "organization": "Decathlon",
+        "period": "Mai 2023 – Aug 2023",
+        "description": "Persönliche Beratung zu Sportartikeln, Lagerverwaltung und Teamarbeit zur Erreichung von Verkaufszielen."
+      },
+      {
+        "title": "Bachelor Informatik",
+        "organization": "UPC – Universitat Politècnica de Catalunya",
+        "period": "2021 – Heute",
+        "description": "Spezialisierung auf Software Engineering und verteilte Systeme."
+      },
+      {
+        "title": "Technologisches Abitur",
+        "organization": "Institut ...",
+        "period": "2019 – 2021",
+        "description": "Technologischer Zweig mit Schwerpunkt auf Mathematik, Physik und Technologie."
+      }
+    ]
+  },
+  "certificates": {
+    "number": "05.",
+    "title": "Zertifikate",
+    "issued_by": "Ausgestellt von",
+    "level_label": "Niveau"
+  },
+  "contact": {
+    "number": "06.",
+    "title": "Kontakt",
+    "heading": "Lass uns zusammenarbeiten",
+    "description": "Ich bin offen für neue Möglichkeiten, Freelance-Projekte oder einfach ein Gespräch über Technologie. Schreib mir gerne.",
+    "cta": "Nachricht senden",
+    "github_desc": "Meine Projekte und Beiträge ansehen",
+    "linkedin_desc": "Professionell vernetzen",
+    "footer_by": "Entworfen und entwickelt von",
+    "footer_stack": "Built with Next.js & Tailwind CSS"
+  },
+  "meta": {
+    "title": "Albert González — Software Engineer",
+    "description": "Informatikstudent spezialisiert auf Full-Stack-Entwicklung und IT-Systeme."
+  }
+}

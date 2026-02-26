@@ -1,17 +1,11 @@
 import Image from "next/image";
-import { MapPin, Code2, Smartphone, Layers } from "lucide-react";
+import { MapPin, Phone, Calendar } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { personalInfo } from "@/lib/data";
 import { getTranslations } from "next-intl/server";
 
 export default async function About() {
   const t = await getTranslations("about");
-
-  const highlights = [
-    { icon: Code2, label: t("highlight_fullstack_label"), desc: t("highlight_fullstack_desc") },
-    { icon: Smartphone, label: t("highlight_mobile_label"), desc: t("highlight_mobile_desc") },
-    { icon: Layers, label: t("highlight_arch_label"), desc: t("highlight_arch_desc") },
-  ];
 
   return (
     <section id="about" className="py-24 px-6">
@@ -40,26 +34,32 @@ export default async function About() {
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <div className="flex items-center gap-2 text-sm text-[var(--muted)]">
-                <MapPin size={14} className="text-[var(--accent)]" />
-                <span>{personalInfo.location}</span>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-sm text-[var(--muted)]">
+                  <MapPin size={14} className="text-[var(--accent)]" />
+                  <span>{personalInfo.location}</span>
+                </div>
+                {personalInfo.phone && (
+                  <div className="flex items-center gap-2 text-sm text-[var(--muted)]">
+                    <Phone size={14} className="text-[var(--accent)]" />
+                    <span>
+                      <span className="text-[var(--foreground)] font-medium mr-1">{t("phone_label")}:</span>
+                      {personalInfo.phone}
+                    </span>
+                  </div>
+                )}
+                {personalInfo.birthYear && (
+                  <div className="flex items-center gap-2 text-sm text-[var(--muted)]">
+                    <Calendar size={14} className="text-[var(--accent)]" />
+                    <span>
+                      <span className="text-[var(--foreground)] font-medium mr-1">{t("age_label")}:</span>
+                      {new Date().getFullYear() - personalInfo.birthYear} {t("age_years")}
+                    </span>
+                  </div>
+                )}
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.35}>
-              <div className="grid grid-cols-3 gap-3 pt-2">
-                {highlights.map(({ icon: Icon, label, desc }) => (
-                  <div
-                    key={label}
-                    className="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] flex flex-col gap-2 hover:border-[var(--accent)] transition-colors duration-200"
-                  >
-                    <Icon size={18} className="text-[var(--accent)]" />
-                    <p className="text-sm font-semibold text-[var(--foreground)]">{label}</p>
-                    <p className="text-xs text-[var(--muted)]">{desc}</p>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
           </div>
 
           <FadeIn delay={0.2} direction="left" className="md:col-span-2">
