@@ -1,5 +1,6 @@
 import FadeIn from "@/components/ui/FadeIn";
 import { skills } from "@/lib/data";
+import { getTranslations } from "next-intl/server";
 
 const techColors: Record<string, string> = {
   react: "#61DAFB",
@@ -27,7 +28,7 @@ const TechIcon = ({ icon, name }: { icon: string; name: string }) => {
   const initial = name.substring(0, 2).toUpperCase();
 
   return (
-    <div className="flex flex-col items-center gap-2 p-3 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-200 group cursor-default">
+    <div className="flex flex-col items-center gap-2 p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-200 group cursor-default">
       <div
         className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white"
         style={{ background: color }}
@@ -41,15 +42,24 @@ const TechIcon = ({ icon, name }: { icon: string; name: string }) => {
   );
 };
 
-export default function Skills() {
+export default async function Skills() {
+  const t = await getTranslations("skills");
+
+  const categoryLabels: Record<string, string> = {
+    Frontend: t("cat_frontend"),
+    Backend: t("cat_backend"),
+    Mobile: t("cat_mobile"),
+    "Tools & DevOps": t("cat_tools"),
+  };
+
   return (
     <section id="skills" className="py-24 px-6 bg-[var(--card)]">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[var(--accent)] font-mono text-sm">02.</span>
+            <span className="text-[var(--accent)] font-mono text-sm">{t("number")}</span>
             <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              Tecnologías
+              {t("title")}
             </h2>
             <div className="flex-1 h-px bg-[var(--border)] max-w-xs" />
           </div>
@@ -60,7 +70,7 @@ export default function Skills() {
             <FadeIn key={group.category} delay={i * 0.1}>
               <div className="flex flex-col gap-4">
                 <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--muted)]">
-                  {group.category}
+                  {categoryLabels[group.category] ?? group.category}
                 </h3>
                 <div className="grid grid-cols-3 gap-2">
                   {group.skills.map((skill) => (

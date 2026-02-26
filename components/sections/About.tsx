@@ -2,22 +2,25 @@ import Image from "next/image";
 import { MapPin, Code2, Smartphone, Layers } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { personalInfo } from "@/lib/data";
+import { getTranslations } from "next-intl/server";
 
-const highlights = [
-  { icon: Code2, label: "Full Stack", desc: "Frontend & Backend" },
-  { icon: Smartphone, label: "Mobile", desc: "iOS, Android & Cross-platform" },
-  { icon: Layers, label: "Arquitectura", desc: "Sistemas escalables" },
-];
+export default async function About() {
+  const t = await getTranslations("about");
 
-export default function About() {
+  const highlights = [
+    { icon: Code2, label: t("highlight_fullstack_label"), desc: t("highlight_fullstack_desc") },
+    { icon: Smartphone, label: t("highlight_mobile_label"), desc: t("highlight_mobile_desc") },
+    { icon: Layers, label: t("highlight_arch_label"), desc: t("highlight_arch_desc") },
+  ];
+
   return (
     <section id="about" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[var(--accent)] font-mono text-sm">01.</span>
+            <span className="text-[var(--accent)] font-mono text-sm">{t("number")}</span>
             <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              Sobre mí
+              {t("title")}
             </h2>
             <div className="flex-1 h-px bg-[var(--border)] max-w-xs" />
           </div>
@@ -27,14 +30,12 @@ export default function About() {
           <div className="md:col-span-3 flex flex-col gap-6">
             <FadeIn delay={0.1}>
               <p className="text-[var(--muted)] leading-relaxed text-base">
-                {personalInfo.bio}
+                {(await getTranslations("personal"))("bio")}
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-[var(--muted)] leading-relaxed text-base">
-                Me apasiona construir productos que combinen una experiencia de usuario cuidada
-                con código limpio y mantenible. Siempre buscando aprender nuevas tecnologías
-                y aplicar buenas prácticas en cada proyecto.
+                {(await getTranslations("personal"))("bio2")}
               </p>
             </FadeIn>
 

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ArrowDown, FileText } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { personalInfo } from "@/lib/data";
 
 const container = {
@@ -14,10 +15,19 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    },
+  },
 };
 
 export default function Hero() {
+  const t = useTranslations("hero");
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative overflow-hidden">
       <div
@@ -41,7 +51,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
             </span>
-            Disponible para nuevas oportunidades
+            {t("available")}
           </span>
         </motion.div>
 
@@ -49,7 +59,7 @@ export default function Hero() {
           variants={item}
           className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[var(--foreground)] leading-[1.05]"
         >
-          Hola, soy{" "}
+          {t("greeting")}{" "}
           <span
             className="text-transparent bg-clip-text"
             style={{
@@ -66,14 +76,14 @@ export default function Hero() {
           variants={item}
           className="text-xl sm:text-2xl text-[var(--muted)] font-light tracking-wide"
         >
-          {personalInfo.tagline}
+          {useTranslations("personal")("tagline")}
         </motion.p>
 
         <motion.p
           variants={item}
           className="text-base text-[var(--muted)] max-w-xl leading-relaxed"
         >
-          {personalInfo.bio}
+          {useTranslations("personal")("bio")}
         </motion.p>
 
         <motion.div variants={item} className="flex flex-wrap gap-3 justify-center">
@@ -82,13 +92,13 @@ export default function Hero() {
             className="px-5 py-2.5 rounded-lg text-sm font-medium text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0"
             style={{ background: "var(--accent)" }}
           >
-            Ver proyectos
+            {t("cta_projects")}
           </a>
           <a
             href="#contact"
             className="px-5 py-2.5 rounded-lg text-sm font-medium border border-[var(--border)] text-[var(--foreground)] bg-[var(--card)] hover:border-[var(--accent)] hover:-translate-y-0.5 transition-all duration-200"
           >
-            Contacto
+            {t("cta_contact")}
           </a>
           {personalInfo.cv && (
             <a
@@ -98,7 +108,7 @@ export default function Hero() {
               className="px-5 py-2.5 rounded-lg text-sm font-medium border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
             >
               <FileText size={14} />
-              CV
+              {t("cta_cv")}
             </a>
           )}
         </motion.div>

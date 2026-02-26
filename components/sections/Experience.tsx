@@ -1,16 +1,27 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { experience } from "@/lib/data";
+import { getTranslations } from "next-intl/server";
 
-export default function Experience() {
+export default async function Experience() {
+  const t = await getTranslations("experience");
+
+  const translatedItems = experience.map((item, i) => ({
+    ...item,
+    title: t(`items.${i}.title`),
+    organization: t(`items.${i}.organization`),
+    period: t(`items.${i}.period`),
+    description: t(`items.${i}.description`),
+  }));
+
   return (
     <section id="experience" className="py-24 px-6 bg-[var(--card)]">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[var(--accent)] font-mono text-sm">04.</span>
+            <span className="text-[var(--accent)] font-mono text-sm">{t("number")}</span>
             <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              Experiencia
+              {t("title")}
             </h2>
             <div className="flex-1 h-px bg-[var(--border)] max-w-xs" />
           </div>
@@ -20,7 +31,7 @@ export default function Experience() {
           <div className="absolute left-6 top-0 bottom-0 w-px bg-[var(--border)] md:left-8" />
 
           <div className="flex flex-col gap-8">
-            {experience.map((item, i) => (
+            {translatedItems.map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="relative flex gap-6 md:gap-8 pl-14 md:pl-20">
                   <div

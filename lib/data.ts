@@ -1,12 +1,12 @@
 export const personalInfo = {
-  name: "Tu Nombre",
+  name: "Albert González",
   title: "Software Engineer",
   tagline: "Full Stack · Mobile · Always Building",
   bio: "Soy Ingeniero Informático apasionado por construir productos digitales de calidad. Me especializo en desarrollo Full Stack y aplicaciones móviles, siempre buscando escribir código limpio, escalable y con buena UX.",
-  location: "España",
-  email: "tu@email.com",
-  github: "https://github.com/tu-usuario",
-  linkedin: "https://linkedin.com/in/tu-usuario",
+  location: "Barcelona, España",
+  email: "albertgnzbr@gmail.com",
+  github: "https://github.com/abet22",
+  linkedin: "https://www.linkedin.com/in/albert-gonzalez-braojos/",
   cv: "/cv.pdf",
   avatar: "/avatar.jpg",
 };

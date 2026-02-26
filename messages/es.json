@@ -1,0 +1,106 @@
+{
+  "personal": {
+    "tagline": "Full Stack · Mobile · Siempre Construyendo",
+    "bio": "Soy Ingeniero Informático apasionado por construir productos digitales de calidad. Me especializo en desarrollo Full Stack y aplicaciones móviles, siempre buscando escribir código limpio, escalable y con buena UX.",
+    "bio2": "Me apasiona construir productos que combinen una experiencia de usuario cuidada con código limpio y mantenible. Siempre buscando aprender nuevas tecnologías y aplicar buenas prácticas en cada proyecto."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "available": "Disponible para nuevas oportunidades",
+    "greeting": "Hola, soy",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Contacto",
+    "cta_cv": "CV"
+  },
+  "about": {
+    "number": "01.",
+    "title": "Sobre mí",
+    "highlight_fullstack_label": "Full Stack",
+    "highlight_fullstack_desc": "Frontend & Backend",
+    "highlight_mobile_label": "Mobile",
+    "highlight_mobile_desc": "iOS, Android & Cross-platform",
+    "highlight_arch_label": "Arquitectura",
+    "highlight_arch_desc": "Sistemas escalables"
+  },
+  "skills": {
+    "number": "02.",
+    "title": "Tecnologías",
+    "cat_frontend": "Frontend",
+    "cat_backend": "Backend",
+    "cat_mobile": "Mobile",
+    "cat_tools": "Tools & DevOps"
+  },
+  "projects": {
+    "number": "03.",
+    "title": "Proyectos",
+    "show_all": "Ver todos los proyectos ({count})",
+    "show_less": "Mostrar menos",
+    "items": [
+      {
+        "title": "Proyecto Alpha",
+        "description": "Una aplicación web completa con autenticación, dashboard en tiempo real y API REST.",
+        "longDescription": "Descripción detallada del proyecto. Qué problema resuelve, cómo lo resuelve y qué aprendiste construyéndolo."
+      },
+      {
+        "title": "App Mobile",
+        "description": "Aplicación móvil cross-platform con notificaciones push y sincronización offline.",
+        "longDescription": "Descripción detallada de la app mobile. Plataformas soportadas, desafíos técnicos y soluciones adoptadas."
+      },
+      {
+        "title": "API Service",
+        "description": "Microservicio RESTful con autenticación JWT, rate limiting y documentación automática.",
+        "longDescription": "API construida con arquitectura limpia, tests de integración y documentación con Swagger."
+      },
+      {
+        "title": "Proyecto Extra",
+        "description": "Herramienta de productividad con interfaz minimalista y sincronización en la nube.",
+        "longDescription": "Descripción adicional del cuarto proyecto."
+      }
+    ]
+  },
+  "experience": {
+    "number": "04.",
+    "title": "Experiencia",
+    "items": [
+      {
+        "title": "Software Engineer",
+        "organization": "Empresa Actual",
+        "period": "2024 – Presente",
+        "description": "Desarrollo de funcionalidades full stack, optimización de rendimiento y colaboración en diseño de arquitectura."
+      },
+      {
+        "title": "Desarrollador Full Stack (Prácticas)",
+        "organization": "Empresa Anterior",
+        "period": "2023 – 2024",
+        "description": "Participé en el ciclo completo de desarrollo de una plataforma SaaS: desde el diseño hasta el despliegue en producción."
+      },
+      {
+        "title": "Grado en Ingeniería Informática",
+        "organization": "Universidad",
+        "period": "2020 – 2024",
+        "description": "Especialización en Ingeniería del Software. TFG sobre arquitecturas de microservicios."
+      }
+    ]
+  },
+  "contact": {
+    "number": "05.",
+    "title": "Contacto",
+    "heading": "Trabajemos juntos",
+    "description": "Estoy abierto a nuevas oportunidades, proyectos freelance o simplemente charlar sobre tecnología. No dudes en escribirme.",
+    "cta": "Envíame un mensaje",
+    "github_desc": "Ve mis proyectos y contribuciones",
+    "linkedin_desc": "Conéctemos profesionalmente",
+    "footer_by": "Diseñado y construido por",
+    "footer_stack": "Built with Next.js & Tailwind CSS"
+  },
+  "meta": {
+    "title": "Albert González — Software Engineer",
+    "description": "Ingeniero Informático especializado en Full Stack y desarrollo móvil."
+  }
+}

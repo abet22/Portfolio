@@ -1,0 +1,106 @@
+{
+  "personal": {
+    "tagline": "Full Stack · Mobile · Always Building",
+    "bio": "I'm a Computer Science Engineer passionate about building high-quality digital products. I specialize in Full Stack development and mobile applications, always striving to write clean, scalable code with great UX.",
+    "bio2": "I'm passionate about building products that combine a thoughtful user experience with clean, maintainable code. Always looking to learn new technologies and apply best practices in every project."
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Open to new opportunities",
+    "greeting": "Hi, I'm",
+    "cta_projects": "View projects",
+    "cta_contact": "Contact",
+    "cta_cv": "CV"
+  },
+  "about": {
+    "number": "01.",
+    "title": "About me",
+    "highlight_fullstack_label": "Full Stack",
+    "highlight_fullstack_desc": "Frontend & Backend",
+    "highlight_mobile_label": "Mobile",
+    "highlight_mobile_desc": "iOS, Android & Cross-platform",
+    "highlight_arch_label": "Architecture",
+    "highlight_arch_desc": "Scalable systems"
+  },
+  "skills": {
+    "number": "02.",
+    "title": "Technologies",
+    "cat_frontend": "Frontend",
+    "cat_backend": "Backend",
+    "cat_mobile": "Mobile",
+    "cat_tools": "Tools & DevOps"
+  },
+  "projects": {
+    "number": "03.",
+    "title": "Projects",
+    "show_all": "View all projects ({count})",
+    "show_less": "Show less",
+    "items": [
+      {
+        "title": "Project Alpha",
+        "description": "A full-featured web app with authentication, real-time dashboard and REST API.",
+        "longDescription": "Detailed description of the project. What problem it solves, how it solves it and what you learned building it."
+      },
+      {
+        "title": "Mobile App",
+        "description": "Cross-platform mobile application with push notifications and offline sync.",
+        "longDescription": "Detailed description of the mobile app. Supported platforms, technical challenges and solutions adopted."
+      },
+      {
+        "title": "API Service",
+        "description": "RESTful microservice with JWT authentication, rate limiting and auto-generated docs.",
+        "longDescription": "API built with clean architecture, integration tests and Swagger documentation."
+      },
+      {
+        "title": "Extra Project",
+        "description": "Productivity tool with a minimalist interface and cloud synchronization.",
+        "longDescription": "Additional description for the fourth project."
+      }
+    ]
+  },
+  "experience": {
+    "number": "04.",
+    "title": "Experience",
+    "items": [
+      {
+        "title": "Software Engineer",
+        "organization": "Current Company",
+        "period": "2024 – Present",
+        "description": "Full stack feature development, performance optimization and collaboration on architecture design."
+      },
+      {
+        "title": "Full Stack Developer (Intern)",
+        "organization": "Previous Company",
+        "period": "2023 – 2024",
+        "description": "Participated in the full development lifecycle of a SaaS platform: from design to production deployment."
+      },
+      {
+        "title": "BSc in Computer Science",
+        "organization": "University",
+        "period": "2020 – 2024",
+        "description": "Specialization in Software Engineering. Final thesis on microservices architectures."
+      }
+    ]
+  },
+  "contact": {
+    "number": "05.",
+    "title": "Contact",
+    "heading": "Let's work together",
+    "description": "I'm open to new opportunities, freelance projects or just a chat about technology. Feel free to reach out.",
+    "cta": "Send me a message",
+    "github_desc": "Check my projects and contributions",
+    "linkedin_desc": "Let's connect professionally",
+    "footer_by": "Designed and built by",
+    "footer_stack": "Built with Next.js & Tailwind CSS"
+  },
+  "meta": {
+    "title": "Albert González — Software Engineer",
+    "description": "Computer Science Engineer specializing in Full Stack and mobile development."
+  }
+}

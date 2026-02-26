@@ -1,37 +1,40 @@
 import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { personalInfo } from "@/lib/data";
+import { getTranslations } from "next-intl/server";
 
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: personalInfo.github,
-    icon: Github,
-    desc: "Ve mis proyectos y contribuciones",
-  },
-  {
-    label: "LinkedIn",
-    href: personalInfo.linkedin,
-    icon: Linkedin,
-    desc: "Conéctemos profesionalmente",
-  },
-  {
-    label: "Email",
-    href: `mailto:${personalInfo.email}`,
-    icon: Mail,
-    desc: personalInfo.email,
-  },
-];
+export default async function Contact() {
+  const t = await getTranslations("contact");
 
-export default function Contact() {
+  const socialLinks = [
+    {
+      label: "GitHub",
+      href: personalInfo.github,
+      icon: Github,
+      desc: t("github_desc"),
+    },
+    {
+      label: "LinkedIn",
+      href: personalInfo.linkedin,
+      icon: Linkedin,
+      desc: t("linkedin_desc"),
+    },
+    {
+      label: "Email",
+      href: `mailto:${personalInfo.email}`,
+      icon: Mail,
+      desc: personalInfo.email,
+    },
+  ];
+
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[var(--accent)] font-mono text-sm">05.</span>
+            <span className="text-[var(--accent)] font-mono text-sm">{t("number")}</span>
             <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              Contacto
+              {t("title")}
             </h2>
             <div className="flex-1 h-px bg-[var(--border)] max-w-xs" />
           </div>
@@ -41,14 +44,11 @@ export default function Contact() {
           <div className="flex flex-col gap-5">
             <FadeIn delay={0.1}>
               <h3 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] leading-tight">
-                Trabajemos juntos
+                {t("heading")}
               </h3>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-[var(--muted)] leading-relaxed">
-                Estoy abierto a nuevas oportunidades, proyectos freelance o simplemente
-                charlar sobre tecnología. No dudes en escribirme.
-              </p>
+              <p className="text-[var(--muted)] leading-relaxed">{t("description")}</p>
             </FadeIn>
             <FadeIn delay={0.3}>
               <a
@@ -57,7 +57,7 @@ export default function Contact() {
                 style={{ background: "var(--accent)" }}
               >
                 <Mail size={15} />
-                Envíame un mensaje
+                {t("cta")}
               </a>
             </FadeIn>
           </div>
@@ -92,12 +92,10 @@ export default function Contact() {
       <FadeIn delay={0.4}>
         <div className="max-w-5xl mx-auto mt-24 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-[var(--muted)]">
-            Diseñado y construido por{" "}
+            {t("footer_by")}{" "}
             <span className="text-[var(--foreground)] font-medium">{personalInfo.name}</span>
           </p>
-          <p className="text-xs text-[var(--muted)]">
-            Built with Next.js & Tailwind CSS
-          </p>
+          <p className="text-xs text-[var(--muted)]">{t("footer_stack")}</p>
         </div>
       </FadeIn>
     </section>

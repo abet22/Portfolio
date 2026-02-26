@@ -1,0 +1,106 @@
+{
+  "personal": {
+    "tagline": "Full Stack · Mobile · Sempre Construint",
+    "bio": "Soc Enginyer Informàtic apassionat per construir productes digitals de qualitat. M'especialitzo en desenvolupament Full Stack i aplicacions mòbils, sempre buscant escriure codi net, escalable i amb bona UX.",
+    "bio2": "M'apassiona construir productes que combinin una experiència d'usuari acurada amb codi net i mantenible. Sempre buscant aprendre noves tecnologies i aplicar bones pràctiques a cada projecte."
+  },
+  "nav": {
+    "about": "Sobre mi",
+    "skills": "Skills",
+    "projects": "Projectes",
+    "experience": "Experiència",
+    "contact": "Contacte"
+  },
+  "hero": {
+    "available": "Disponible per a noves oportunitats",
+    "greeting": "Hola, soc",
+    "cta_projects": "Veure projectes",
+    "cta_contact": "Contacte",
+    "cta_cv": "CV"
+  },
+  "about": {
+    "number": "01.",
+    "title": "Sobre mi",
+    "highlight_fullstack_label": "Full Stack",
+    "highlight_fullstack_desc": "Frontend & Backend",
+    "highlight_mobile_label": "Mobile",
+    "highlight_mobile_desc": "iOS, Android & Cross-platform",
+    "highlight_arch_label": "Arquitectura",
+    "highlight_arch_desc": "Sistemes escalables"
+  },
+  "skills": {
+    "number": "02.",
+    "title": "Tecnologies",
+    "cat_frontend": "Frontend",
+    "cat_backend": "Backend",
+    "cat_mobile": "Mobile",
+    "cat_tools": "Tools & DevOps"
+  },
+  "projects": {
+    "number": "03.",
+    "title": "Projectes",
+    "show_all": "Veure tots els projectes ({count})",
+    "show_less": "Mostrar menys",
+    "items": [
+      {
+        "title": "Projecte Alpha",
+        "description": "Una aplicació web completa amb autenticació, dashboard en temps real i API REST.",
+        "longDescription": "Descripció detallada del projecte. Quin problema resol, com ho resol i què vas aprendre construint-lo."
+      },
+      {
+        "title": "App Mòbil",
+        "description": "Aplicació mòbil cross-platform amb notificacions push i sincronització offline.",
+        "longDescription": "Descripció detallada de l'app mòbil. Plataformes suportades, reptes tècnics i solucions adoptades."
+      },
+      {
+        "title": "API Service",
+        "description": "Microservei RESTful amb autenticació JWT, rate limiting i documentació automàtica.",
+        "longDescription": "API construïda amb arquitectura neta, tests d'integració i documentació amb Swagger."
+      },
+      {
+        "title": "Projecte Extra",
+        "description": "Eina de productivitat amb interfície minimalista i sincronització al núvol.",
+        "longDescription": "Descripció addicional del quart projecte."
+      }
+    ]
+  },
+  "experience": {
+    "number": "04.",
+    "title": "Experiència",
+    "items": [
+      {
+        "title": "Software Engineer",
+        "organization": "Empresa Actual",
+        "period": "2024 – Present",
+        "description": "Desenvolupament de funcionalitats full stack, optimització de rendiment i col·laboració en disseny d'arquitectura."
+      },
+      {
+        "title": "Desenvolupador Full Stack (Pràctiques)",
+        "organization": "Empresa Anterior",
+        "period": "2023 – 2024",
+        "description": "Vaig participar en el cicle complet de desenvolupament d'una plataforma SaaS: des del disseny fins al desplegament en producció."
+      },
+      {
+        "title": "Grau en Enginyeria Informàtica",
+        "organization": "Universitat",
+        "period": "2020 – 2024",
+        "description": "Especialització en Enginyeria del Programari. TFG sobre arquitectures de microserveis."
+      }
+    ]
+  },
+  "contact": {
+    "number": "05.",
+    "title": "Contacte",
+    "heading": "Treballem junts",
+    "description": "Estic obert a noves oportunitats, projectes freelance o simplement xerrar sobre tecnologia. No dubtis en escriure'm.",
+    "cta": "Envia'm un missatge",
+    "github_desc": "Mira els meus projectes i contribucions",
+    "linkedin_desc": "Connectem professionalment",
+    "footer_by": "Dissenyat i construït per",
+    "footer_stack": "Built with Next.js & Tailwind CSS"
+  },
+  "meta": {
+    "title": "Albert González — Software Engineer",
+    "description": "Enginyer Informàtic especialitzat en Full Stack i desenvolupament mòbil."
+  }
+}

@@ -5,20 +5,29 @@ import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { projects } from "@/lib/data";
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
+  const t = useTranslations("projects");
   const [showAll, setShowAll] = useState(false);
-  const featured = projects.filter((p) => p.featured);
-  const displayed = showAll ? projects : featured;
+
+  const translatedProjects = projects.map((p, i) => ({
+    ...p,
+    title: t(`items.${i}.title`),
+    description: t(`items.${i}.description`),
+  }));
+
+  const featured = translatedProjects.filter((p) => p.featured);
+  const displayed = showAll ? translatedProjects : featured;
 
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-[var(--accent)] font-mono text-sm">03.</span>
+            <span className="text-[var(--accent)] font-mono text-sm">{t("number")}</span>
             <h2 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">
-              Proyectos
+              {t("title")}
             </h2>
             <div className="flex-1 h-px bg-[var(--border)] max-w-xs" />
           </div>
@@ -104,7 +113,7 @@ export default function Projects() {
                 onClick={() => setShowAll(!showAll)}
                 className="px-5 py-2.5 rounded-lg text-sm font-medium border border-[var(--border)] text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--accent)] transition-all duration-200"
               >
-                {showAll ? "Mostrar menos" : `Ver todos los proyectos (${projects.length})`}
+                {showAll ? t("show_less") : t("show_all", { count: projects.length })}
               </button>
             </div>
           </FadeIn>
