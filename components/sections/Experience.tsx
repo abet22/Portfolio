@@ -1,6 +1,6 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
-import { experience, Experience } from "@/lib/data";
+import { experience, type Experience } from "@/lib/data";
 import { getTranslations } from "next-intl/server";
 
 type TranslatedExperience = Experience & {
